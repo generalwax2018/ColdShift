@@ -18,17 +18,17 @@ ColdShift helps reclaim physical RAM by:
 - **GUI application**: `ColdShift-GUI.py` (CustomTkinter)
   - Live system memory display
   - Process list sorted by RAM
-  - Highlights potential offload candidates (high RAM + low CPU)
+  - Highlights processes that are safe to offload with little consequence
   - Filters and auto-refresh
   - Measurement only (does not modify processes)
 
-## Setup
+## Setup (development)
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run
+## Run from source
 
 ```bash
 # GUI (recommended)
@@ -38,13 +38,30 @@ python ColdShift-GUI.py
 python ColdShift-Measure.py
 ```
 
+## Build a standalone .exe (Windows)
+
+1. Double-click `build_exe.bat`  
+   **or** run it from a command prompt:
+
+   ```bat
+   build_exe.bat
+   ```
+
+2. When it finishes, the single-file executable is here:
+
+   ```
+   dist\ColdShift.exe
+   ```
+
+You can copy `ColdShift.exe` to any Windows PC and run it. No Python or extra installs required.
+
 ## Status
 
 Early stage — measurement and classification layer first. Offload actions coming next.
 
 ## Platform
 
-Windows first (tested). Linux/macOS should work with psutil.
+Windows first (tested). Linux/macOS should work from source with psutil.
 
 ## Next Steps
 
